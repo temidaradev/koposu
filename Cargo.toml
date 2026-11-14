@@ -1,0 +1,22 @@
+[package]
+name = "koposu"
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.95.0"
+description = "A kopuz plugin that plays your osu!lazer and osu!stable song libraries."
+license = "EUPL-1.2"
+repository = "https://github.com/Kopuz-org/koposu"
+publish = false
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+kopuz-plugin-sdk = { git = "https://github.com/Kopuz-org/kopuz", branch = "master" }
+
+[profile.release]
+opt-level = "s"
+panic = "abort"
+lto = true
+codegen-units = 1
+strip = true

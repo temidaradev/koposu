@@ -1,0 +1,17 @@
+id = "koposu"
+name = "koposu"
+version = "0.1.0"
+api = "0.1"
+description = "Your osu!lazer and osu!stable song libraries, played from the folders they are in."
+
+[permissions]
+network = []
+folders = "read"
+
+[[service]]
+id = "osu"
+name = "osu!"
+summary = "Songs from your osu!lazer or osu!stable library"
+icon = "M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm0 3a7 7 0 1 1 0 14 7 7 0 0 1 0-14zm0 3a4 4 0 1 0 0 8 4 4 0 0 0 0-8z"
+accent = "#ff66aa"
+capabilities = { sync = true }
