@@ -6,8 +6,6 @@
 # Leaves dist/kopuz-plugin.toml and dist/plugin.wasm, the two files a release
 # carries, and prints the entry for Kopuz-org/plugins' index.json. The tag
 # (v<version> by default) names the release the files are downloaded from.
-# `"verified": true` is printed because koposu asks to read folders; only the
-# kopuz maintainers may keep it, after reviewing this very build.
 set -euo pipefail
 cd "$(dirname "$0")/.."
 
@@ -40,7 +38,6 @@ cat <<JSON
   "services": ["osu"],
   "network": [],
   "folders": "read",
-  "verified": true,
   "manifest": { "url": "$base/kopuz-plugin.toml", "sha256": "$(sha dist/kopuz-plugin.toml)" },
   "component": { "url": "$base/plugin.wasm", "sha256": "$(sha dist/plugin.wasm)" }
 }

@@ -17,10 +17,9 @@ map gives nothing else. Durations come from the audio files themselves.
 
 ## Using it
 
-Install **koposu** from **Settings → Library → Plugins**. It is listed as
-**Verified**: it asks to read the folders you pick for its sources, which Kopuz
-only allows for plugins its maintainers have reviewed. Then add a source and
-pick **osu!**. It asks for folders instead of a server address:
+Install **koposu** from **Settings → Library → Plugins**. Kopuz warns that it
+reads files in the folders you pick for its sources. Then add a source and pick
+**osu!**. It asks for folders instead of a server address:
 
 | Game | Folder to pick |
 | ---- | -------------- |
@@ -53,17 +52,14 @@ KOPOSU_TEST_LIBRARY=~/.local/share/osu cargo test real -- --nocapture
 
 ### Trying a build in Kopuz
 
-A plugin that reads folders loads only as the build the marketplace verified,
-so a build of your own needs a debug build of Kopuz that trusts it:
+Put your build in the plugin directory, and Kopuz loads it like any other:
 
 ```sh
 mkdir -p "$KOPUZ_PLUGIN_DIR/koposu"
 cp kopuz-plugin.toml "$KOPUZ_PLUGIN_DIR/koposu/"
 cp target/wasm32-wasip2/release/koposu.wasm "$KOPUZ_PLUGIN_DIR/koposu/plugin.wasm"
-KOPUZ_TRUST_PLUGINS=koposu just serve
+just serve
 ```
-
-Release builds of Kopuz ignore `KOPUZ_TRUST_PLUGINS`.
 
 ## Releasing
 
@@ -71,8 +67,7 @@ Bump `version` in both `Cargo.toml` and `kopuz-plugin.toml`, then push a `v*`
 tag. The release workflow builds the component, attaches
 `kopuz-plugin.toml` and `plugin.wasm` to a GitHub release, and puts the
 marketplace entry for `Kopuz-org/plugins`' `index.json` in the release notes.
-`scripts/package.sh` prints the same entry locally. A maintainer reviews the
-build before the entry, with `"verified": true`, goes into the index.
+`scripts/package.sh` prints the same entry locally.
 
 ## License
 

@@ -2,8 +2,7 @@
 //!
 //! A source is one or more folders: an osu!lazer data folder (the one with
 //! `client.realm`), an osu!stable install, or its `Songs` folder. kopuz
-//! mounts them read-only, and only because the marketplace lists this
-//! plugin as verified. Nothing is written and nothing leaves the computer.
+//! mounts them read-only. Nothing is written and nothing leaves the computer.
 
 pub mod audio;
 pub mod lazer;
