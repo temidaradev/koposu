@@ -5,7 +5,7 @@ edition = "2024"
 rust-version = "1.95.0"
 description = "A kopuz plugin that plays your osu!lazer and osu!stable song libraries."
 license = "EUPL-1.2"
-repository = "https://github.com/Kopuz-org/koposu"
+repository = "https://github.com/temidaradev/koposu"
 publish = false
 
 [lib]

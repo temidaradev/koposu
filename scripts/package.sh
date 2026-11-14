@@ -25,7 +25,7 @@ cp kopuz-plugin.toml dist/kopuz-plugin.toml
 cp target/wasm32-wasip2/release/koposu.wasm dist/plugin.wasm
 
 sha() { sha256sum "$1" | cut -d' ' -f1; }
-base="https://github.com/Kopuz-org/koposu/releases/download/$tag"
+base="https://github.com/temidaradev/koposu/releases/download/$tag"
 cat <<JSON
 {
   "id": "koposu",
@@ -33,8 +33,8 @@ cat <<JSON
   "version": "$version",
   "api": "0.1",
   "description": "Your osu!lazer and osu!stable song libraries, played from the folders they are in.",
-  "author": "Kopuz-org",
-  "homepage": "https://github.com/Kopuz-org/koposu",
+  "author": "temidaradev",
+  "homepage": "https://github.com/temidaradev/koposu",
   "services": ["osu"],
   "network": [],
   "folders": "read",
